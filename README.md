@@ -1,2 +1,2 @@
 # Machine-Learning
-Implementations and testing ML algorithms.
+Implementations and testing of machine learning algorithms.
