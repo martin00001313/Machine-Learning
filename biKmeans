@@ -58,8 +58,7 @@ def kMeans(dataSet, k, distMeas=distEclud, createCent=randCent):
             print 'the len of bestClustAss is: ', len(bestClustAss)
             centList[bestCentToSplit] = bestNewCents[0,:]
             centList.append(bestNewCents[1,:])
-            clusterAssment[nonzero(clusterAssment[:,0].A == \
-            bestCentToSplit)[0],:]= bestClustAss
+            clusterAssment[nonzero(clusterAssment[:,0].A == bestCentToSplit)[0],:]= bestClustAss
     return mat(centList), clusterAssment
 
  
