@@ -1,7 +1,20 @@
 import numpy as np
 
+
 def loadData():
-    pass
+    return [[1, 3, 4], [2, 3, 5], [1, 2, 3, 5], [2, 5]]
+    #pass
+
+
+"""
+For each transaction in tran the dataset:
+For each candidate itemset, can:
+    Check to see if can is a subset of tran
+    If so increment the count of can
+For each candidate itemset:
+If the support meets the minimum, keep this item
+Return list of frequent itemsets
+"""
 
 
 def createFSet1(data):
@@ -31,7 +44,7 @@ def scanData(data, Ck, minSupport):
     for i in data:
         for c in Ck:
             if c.issubset(i):
-                if ssCnt.has_key(c):
+                if c in ssCnt:
                     ssCnt[c] += 1
                 else:
                     ssCnt[c] = 1
@@ -78,3 +91,5 @@ def apriori(data, minSupport = 0.13):
     return L, supportData
 
 
+if __name__ == "__main__":
+    print(str(createFSet1(loadData())))
